@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.springboot.mapper.StudentMapper">
+
+    <!--查询多条数据-->
+    <!--resultType是数据返回放到哪个类型中-->
+    <select id="selectAllStudent" resultType="com.bjpowernode.bean.Student">
+        SELECT id,name,age,score FROM t_student
+    </select>
+
+
+
+</mapper>

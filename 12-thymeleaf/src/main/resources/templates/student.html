@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf 入门</title>
+</head>
+<body>
+<!--标准变量表达式-->
+   <!-- <div th:text="${student.name}">&lt;!&ndash;标准表达式&ndash;&gt;
+        aaa
+    </div>
+    <div th:text="${student.age}">&lt;!&ndash;标准表达式&ndash;&gt;
+        0
+    </div>
+    <div th:text="${student.address}">&lt;!&ndash;标准表达式&ndash;&gt;
+       中国
+   </div>-->
+<!--选择变量表达式-->
+    <!--<div th:object="${student}">
+        <div th:text="*{name}">
+            aaa
+        </div>
+        <div th:text="*{age}">
+            0
+        </div>
+        <div th:text="*{address}">
+            中国
+        </div>
+    </div>-->
+<!--url变量达式-->
+<!--    <a  href="/info.html" th:href="@{student/info(id=${student.id},name=${student.name})}">
+      拼接参数的方式
+    </a><br>
+    <a href="/info.html" th:href="@{/user/info/{id}(id=${student.id})}">
+        restful方式
+    </a>-->
+    <!--使用each遍历集合-->
+        <!--<table>-->
+            <!--<tr th:each="student:${list}">-->
+                <!--<td th:text="${studentStat.count}"></td>-->
+                <!--<td th:text="${student.name}"></td>-->
+                <!--<td th:text="${student.age}"></td>-->
+                <!--<td th:text="${student.address}"></td>-->
+            <!--</tr>-->
+        <!--</table>-->
+      <!--  <form>
+            <input th:id="${student.name}" th:name="${student.name}">
+        </form>-->
+    <!--<p th:text="2019 + 10"></p>-->
+    <!--<p th:if="${student.age==11}">-->
+        <!--哈哈-->
+    <!--</p>-->
+    <!--<span th:text="|当前是第${student.id}页，共${student.id}页|">-->
+        <!---->
+    <!--</span>-->
+    <span th:text="${#session.getAttribute('id')}"></span>
+
+</body>
+    <script th:inline="javascript" type="text/javascript">
+        var username=[[${student.name}]];//js中获取对象
+        alert(username)
+    </script>
+</html>
